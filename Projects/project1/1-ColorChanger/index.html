@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colour Changer</title>
+    <style>
+        body{
+            margin: 0%;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .button{
+            padding :10px;
+            height: 50px;
+            width: 50px;
+            border: 2px solid black;
+            margin-left: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav style="background-color: rgb(211, 192, 184); padding: 10px; display: flex ; align-items: center; margin: 0%; border-bottom: 1px solid rgba(15, 1, 1, 0.329);">
+        <a href='/Projects/project1/' style=" border: 1px solid black; border-radius: 4px; padding: 5px 30px; color:black; text-decoration: none; background-color: rgb(190, 182, 182);" onmouseover="this.style.backgroundColor = 'grey';" onmouseout="this.style.backgroundColor =  'rgb(190, 182, 182)';" >Home</a>
+    </nav>
+    <main>
+        <div style="display: flex; flex-direction: column;" >
+            <h1 style="text-align: center;">Colour Scheme Switcher</h1>
+            <div style="display: flex; margin-left: 39%;">
+                <span class="button" id="grey" style="background-color: grey;"></span>
+                <span class="button" id="white" style="background-color: white;"></span>
+                <span class="button" id="blue" style="background-color: blue;"></span>
+                <span class="button" id="yellow" style="background-color: yellow;"></span>
+                <span class="button" id="purple" style="background-color: purple;"></span>
+            </div>
+            <h1 style="text-align: center;">Try clicking on one of the colors above to <br> change the background colour of this page!</h1>
+        </div>
+    </main>
+    <script src="colorChanger.js" ></script>
+</body>
+</html>
