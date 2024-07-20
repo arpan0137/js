@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+    <style>
+        body{
+            background-color: rgb(48, 38, 38);
+            color: #b8adad;
+        }
+        li{
+            list-style: none;
+            margin-right: 6px;
+        }
+    </style>
+</head>
+<body >
+    <h2>Amazing Images</h2>
+    <div">
+        <ul id="images"  style="display: flex;">
+            <li><img width="200px" id="sky" src="https://images.pexels.com/photos/27060825/pexels-photo-27060825/free-photo-of-a-sunset-with-clouds-in-the-sky.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="sky"></li>
+            <li><img width="200px" id="skyscrapers" src="https://images.pexels.com/photos/15378172/pexels-photo-15378172/free-photo-of-landmark-81-skyscraper-towering-over-buildings-in-saigon-vietnam.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="skyscrapers"></li>
+            <li><img width="200px" id="cat" src="https://images.pexels.com/photos/17692060/pexels-photo-17692060/free-photo-of-close-up-of-kitten.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="cat"></li>
+            <li><img width="200px" id="butterfly" src="https://images.pexels.com/photos/17394414/pexels-photo-17394414/free-photo-of-common-leopard-butterfly-sitting-on-leaf.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="butterfly"></li>
+            <li><a href="https://apple.in" style="color: white; text-decoration: none; font-size: x-large;" id="apple">Apple</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+//    document.getElementById('cat').onclick = () => { alert("this is Cat") }
+    // document.getElementById('images').addEventListener('click',(e) => {
+    //     console.log('Clicked inside the ul');
+    // },false)
+    // document.getElementById('skyscrapers').addEventListener('click',(e) => {
+    //     console.log('Skyscraper is amazing !!');
+    //     e.stopPropagation()
+    // },false)
+    // document.getElementById('apple').addEventListener('click',(e) => {
+    //     e.preventDefault()
+    //     // e.stopPropagation()
+    //     console.log('apple clicked !!');
+    // })
+    // document.getElementById('images').addEventListener('click',(e) => {
+        
+    //     if(e.target.tagName === 'IMG' || e.target.tagName === 'A')
+    //     {
+    //         console.log(e.target.parentNode);
+    //         let removeEle = e.target.parentNode
+    //         removeEle.remove()
+    //     }
+    // })
+</script>
+</html>
