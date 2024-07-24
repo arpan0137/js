@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #xhr,
+        th,
+        td {
+            border: 1px solid white;
+            padding: 6px;
+        }
+
+        #image {
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="xhr">
+        <thead>
+            <tr>
+                <th>Value</th>
+                <th>State</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>0</code></td>
+                <td><code>UNSENT</code></td>
+                <td>Client has been created. <code>open()</code> not called yet.</td>
+            </tr>
+            <tr>
+                <td><code>1</code></td>
+                <td><code>OPENED</code></td>
+                <td><code>open()</code> has been called.</td>
+            </tr>
+            <tr>
+                <td><code>2</code></td>
+                <td><code>HEADERS_RECEIVED</code></td>
+                <td><code>send()</code> has been called, and headers and status are available.</td>
+            </tr>
+            <tr>
+                <td><code>3</code></td>
+                <td><code>LOADING</code></td>
+                <td>Downloading; <code>responseText</code> holds partial data.</td>
+            </tr>
+            <tr>
+                <td><code>4</code></td>
+                <td><code>DONE</code></td>
+                <td>The operation is complete.</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table border="1px solid white">
+        <tr>
+            <th id="img">
+            </th>
+        </tr>
+        <tr>
+            <td style="text-align: center;" id="name">
+                Name:
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;" id="followers">
+                Followers:
+            </td>
+        </tr>
+    </table>
+
+</body>
+<script>
+    const requestURL = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', requestURL)
+    xhr.onreadystatechange = function () {
+        // console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText)
+            document.querySelector('#img').innerHTML = `<img id='image' src="${data.avatar_url}" alt="avatar">`
+            document.querySelector('#name').innerHTML += data.name
+            document.querySelector('#followers').innerHTML += data.followers
+            console.log(data.followers)
+            console.log(data.avatar_url)
+        }
+    }
+    xhr.send()
+</script>
+
+</html>
